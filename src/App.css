@@ -2987,6 +2987,7 @@
 
 .ticker-track-viewport {
   flex: 1;
+  min-width: 0;
   overflow: hidden;
   position: relative;
   mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
@@ -4274,6 +4275,15 @@
 }
 
 /* ---------- RESPONSIVE MEDIA QUERIES ---------- */
+/* ---------- RESPONSIVE MEDIA QUERIES (COMPUTERS, TABLETS & MOBILES) ---------- */
+
+/* Global helper classes for desktop/mobile text */
+.inst-text-mobile { display: none; }
+.brand-sub-mobile { display: none; }
+.inst-text-full { display: inline; }
+.brand-sub-full { display: inline; }
+
+/* TABLET BREAKPOINT (max-width: 1024px) */
 @media (max-width: 1024px) {
   .hero-editorial-banner {
     grid-template-columns: 1fr;
@@ -4288,7 +4298,6 @@
   .news-grid { grid-template-columns: repeat(2, 1fr); }
   .photos-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top-grid { grid-template-columns: 1fr 1fr; }
-  .admin-grid-layout { grid-template-columns: 1fr; }
   .member-modal-grid { grid-template-columns: 1fr; }
   .home-preview-grid-3 { grid-template-columns: 1fr; }
   .home-heritage-box { grid-template-columns: 1fr; padding: 2.5rem; }
@@ -4297,16 +4306,285 @@
   .academic-programs-grid { grid-template-columns: 1fr; }
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
   .home-contact-cta-card { grid-template-columns: 1fr; padding: 2.5rem; }
+
+  /* Tablet Admin Portal */
+  .admin-modal-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 1.75rem;
+    max-height: 92vh;
+  }
+  .admin-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
+/* MOBILE PHONES & PHABLETS (max-width: 768px) */
 @media (max-width: 768px) {
-  .desktop-nav-links { display: none; }
-  .mobile-toggle-btn { display: block; }
-  .hero-editorial-banner { padding: 2rem 1.5rem; }
-  .hero-title-prefix { font-size: 1.6rem; }
-  .title-word-terracotta, .title-word-forest { font-size: 2.7rem; }
-  .hero-stats-grid { grid-template-columns: 1fr; }
-  .hero-admissions-banner { flex-direction: column; align-items: flex-start; }
+  /* Prevent horizontal screen expansion */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+
+  /* Top Bar */
+  .top-institution-bar {
+    padding: 0.35rem 0;
+    font-size: 0.78rem;
+  }
+  .top-bar-content {
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: space-between;
+  }
+  .institution-brand {
+    gap: 0.45rem;
+    flex: 1;
+    min-width: 0;
+  }
+  .inst-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .inst-heritage-badge {
+    display: none;
+  }
+  .admin-portal-pill {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  /* Main Navbar */
+  .main-navbar {
+    padding: 0.65rem 0;
+  }
+  .desktop-nav-links { display: none !important; }
+  .mobile-toggle-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: #f1ede4;
+  }
+  .lab-brand {
+    gap: 0.65rem;
+    min-width: 0;
+    flex: 1;
+  }
+  .brand-crest {
+    padding: 0.3rem 0.55rem;
+  }
+  .crest-cst {
+    font-size: 1rem;
+  }
+  .crest-lab {
+    font-size: 0.58rem;
+  }
+  .brand-title {
+    font-size: 0.92rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .brand-subtitle {
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 1.5rem 0 2rem 0;
+  }
+  .hero-editorial-banner {
+    padding: 1.75rem 1.15rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+  }
+  .hero-eyebrow-wrap {
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .hero-eyebrow-wrap .badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+  }
+  .hero-title-prefix { font-size: 1.45rem; }
+  .title-word-terracotta, .title-word-forest { font-size: 2.35rem; }
+  .hero-editorial-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .hero-editorial-actions {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100%;
+  }
+  .btn-hero-terracotta, .btn-hero-outline, .btn-hero-forest {
+    width: 100%;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.92rem !important;
+  }
+  .hero-trust-strip {
+    font-size: 0.8rem;
+  }
+  .floating-chip {
+    display: none !important;
+  }
+  .iisc-building-stage {
+    padding: 0.5rem 0;
+  }
+  .iisc-building-cutout {
+    max-width: 260px;
+  }
+  .hero-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Announcements Ticker */
+  .announcements-ticker-wrapper {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  .ticker-bar {
+    padding: 0.5rem 0.65rem;
+    gap: 0.5rem;
+  }
+  .ticker-label-box {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+  }
+  .ticker-actions {
+    display: none;
+  }
+  .ticker-item {
+    font-size: 0.82rem;
+    gap: 0.65rem;
+  }
+
+  /* Chair Message */
+  .home-chair-section {
+    padding: 2.5rem 0 1.5rem 0;
+  }
+  .chair-editorial-grid {
+    padding: 1.5rem 1rem !important;
+    gap: 1.5rem !important;
+    border-radius: var(--radius-lg);
+  }
+  .chair-image-wrap {
+    width: 100%;
+    max-width: 220px;
+    height: 240px;
+  }
+  .chair-quote-header h3 {
+    font-size: 1.35rem;
+  }
+  .chair-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .chair-pillar-card {
+    padding: 0.85rem;
+  }
+  .chair-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .chair-actions-row button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Facilities */
+  .facility-card-body {
+    padding: 1.25rem;
+  }
+  .facility-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .facility-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  /* Academic Programs */
+  .academic-programs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .academic-program-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  /* Partners */
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.85rem !important;
+  }
+  .partner-card {
+    padding: 0.95rem 0.65rem;
+  }
+
+  /* Heritage Box */
+  .home-heritage-box {
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg);
+  }
+  .heritage-stats-mini {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Home Contact CTA */
+  .home-contact-cta-wrapper {
+    margin: 2.5rem 0 1.5rem 0;
+  }
+  .home-contact-cta-card {
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg);
+    gap: 1.5rem;
+  }
+  .home-cta-left h3 {
+    font-size: 1.5rem;
+  }
+  .home-cta-left p {
+    font-size: 0.92rem;
+  }
+  .home-cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .home-cta-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+  .home-cta-right-box {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Other Department Pages */
   .members-grid { grid-template-columns: 1fr; }
   .news-grid { grid-template-columns: 1fr; }
   .photos-grid { grid-template-columns: 1fr; }
@@ -4318,8 +4596,232 @@
   .r-stat-divider { display: none; }
   .research-filters-row { flex-direction: column; align-items: stretch; }
   .members-search-meta { flex-direction: column; align-items: flex-start; }
-  .chair-pillars-grid { grid-template-columns: 1fr; }
-  .partners-grid { grid-template-columns: 1fr; }
+
+  /* ========================================================
+     ADMIN PORTAL - FULL MOBILE RESPONSIVENESS
+     ======================================================== */
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+  .admin-modal-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.15rem 0.85rem;
+    max-height: 96vh;
+    border-radius: var(--radius-lg);
+    overflow-x: hidden;
+  }
+  .admin-header {
+    padding-bottom: 0.85rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .admin-title-wrap {
+    padding-right: 2.5rem;
+    gap: 0.65rem;
+  }
+  .admin-crest {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  .admin-title-wrap h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .admin-title-wrap p {
+    font-size: 0.75rem;
+  }
+  .modal-close-btn {
+    top: 0;
+    right: 0;
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Login Screen on Mobile */
+  .admin-login-screen {
+    padding: 1rem 0;
+  }
+  .login-box {
+    padding: 1.75rem 1rem;
+    max-width: 100%;
+  }
+  .login-box h3 {
+    font-size: 1.25rem;
+  }
+  .login-box p {
+    font-size: 0.84rem;
+  }
+  .demo-credentials-hint {
+    font-size: 0.75rem;
+  }
+
+  /* Logged In Dashboard on Mobile */
+  .admin-status-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 0.75rem;
+  }
+  .status-admin-email {
+    font-size: 0.78rem;
+    word-break: break-all;
+  }
+  .admin-top-actions {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .admin-action-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  /* Admin Tabs Navigation */
+  .admin-tabs-nav {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .admin-tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  /* Subnav */
+  .admin-section-subnav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .admin-section-info h4 {
+    font-size: 1rem;
+  }
+  .subnav-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.35rem;
+  }
+  .subnav-pill {
+    flex: 1;
+    min-width: 90px;
+    justify-content: center;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  /* Forms & Lists */
+  .admin-grid-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .admin-form-col, .admin-list-col {
+    padding: 1.15rem 0.85rem;
+    border-radius: var(--radius-md);
+  }
+  .admin-form-col h4, .admin-list-col h4 {
+    font-size: 1.05rem;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+  }
+  .admin-item-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 0.85rem;
+  }
+  .admin-item-info {
+    width: 100%;
+  }
+  .admin-item-title {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 0.88rem;
+  }
+  .btn-admin-danger {
+    width: 100%;
+    justify-content: center;
+    padding: 0.45rem;
+  }
+
+  /* Delete Hub */
+  .delete-hub-panel {
+    padding: 1.15rem 0.75rem;
+  }
+  .delete-hub-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding-bottom: 1rem;
+  }
+  .delete-hub-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .hub-category-pills {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.35rem;
+  }
+  .hub-pill {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.75rem;
+  }
+  .hub-search {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hub-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem;
+  }
+  .hub-entry-card {
+    padding: 0.95rem;
+  }
+  .hub-title {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
 }
+
+/* EXTRA SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  .inst-text-full { display: none; }
+  .inst-text-mobile { display: inline; }
+  .brand-sub-full { display: none; }
+  .brand-sub-mobile { display: inline; }
+
+  .title-word-terracotta, .title-word-forest {
+    font-size: 2.1rem;
+  }
+  .partners-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .heritage-stats-mini {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
 

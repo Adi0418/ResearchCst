@@ -54,7 +54,8 @@ export default function Navbar({
           <div className="institution-brand">
             <span className="iisc-emblem">IISc</span>
             <span className="inst-text">
-              <strong>Indian Institute of Science</strong> &bull; Centre for Sustainable Technologies (CST)
+              <span className="inst-text-full"><strong>Indian Institute of Science</strong> &bull; Centre for Sustainable Technologies (CST)</span>
+              <span className="inst-text-mobile"><strong>IISc Bangalore</strong> &bull; CST</span>
             </span>
           </div>
 
@@ -67,7 +68,7 @@ export default function Navbar({
               title="Department Admin Portal (Manage, Add & Delete entries)"
             >
               <ShieldCheck size={14} />
-              <span>{isAdmin ? 'Admin Console (Live)' : 'Admin Portal'}</span>
+              <span>{isAdmin ? 'Admin Console' : 'Admin Portal'}</span>
             </button>
           </div>
         </div>
@@ -84,7 +85,10 @@ export default function Navbar({
             </div>
             <div className="brand-text">
               <span className="brand-title">Centre for Sustainable Technologies (CST)</span>
-              <span className="brand-subtitle">Centre for Sustainable Development &bull; IISc Bengaluru</span>
+              <span className="brand-subtitle">
+                <span className="brand-sub-full">Centre for Sustainable Development &bull; IISc Bengaluru</span>
+                <span className="brand-sub-mobile">IISc Bengaluru</span>
+              </span>
             </div>
           </div>
 
