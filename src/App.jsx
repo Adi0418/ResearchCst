@@ -364,22 +364,22 @@ export default function App() {
                   {labData.members.slice(0, 3).map((member) => (
                     <div 
                       key={member.id} 
-                      className="member-card glass-card"
+                      className="member-card glass-card home-member-card"
                       onClick={() => navigateTo('members')}
                       style={{ cursor: 'pointer' }}
                     >
-                      <div className="member-avatar-wrap">
+                      <div className="member-avatar-wrapper">
                         <img 
                           src={member.photo || member.avatar} 
                           alt={member.name} 
-                          className="member-avatar"
+                          className="member-avatar-img"
                           loading="lazy"
                           onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80';
                           }}
                         />
-                        <span className="badge badge-forest member-badge-float">{member.role}</span>
+                        <span className="member-role-badge">{member.role}</span>
                       </div>
                       <div className="member-info">
                         <h3 className="member-name">{member.name}</h3>
